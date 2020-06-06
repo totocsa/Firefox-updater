@@ -1,0 +1,6 @@
+[Desktop Entry]
+Version=1.0
+Name=ffdu
+Exec=sudo /home/csaba/firefox-dev-updater/ffdu.sh
+Terminal=true
+Type=Application
