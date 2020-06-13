@@ -16,12 +16,12 @@
 2. Right click on the <i>Download Now</i> button and <i>Copy link location</i>.
 3. Paste to ffbdu.sh file 2. line.<br />
    Example: firefoxUrl="https://download.mozilla.org/?product=firefox-devedition-latest-ssl&os=linux64&lang=en-US"
-4. <i>firefoxDir</i> variable value. This value is your firefox path.<br />
+4. Set <i>firefoxDir</i> variable value. This value is your firefox path.<br />
    Example: firefoxDir="/lib/firefox-dev"
-5. <i>workDir</i> variable value. In this directory will write the script.<br />
+5. Set <i>workDir</i> variable value. In this directory will write the script.<br />
    Example: workDir="/tmp"<br />
 	 or directory of script: workDir="$(cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
-6. <i>checksumversion</i> variable value. 256 or 512.
+6. Set <i>checksumversion</i> variable value. 256 or 512.
    Example: 512
 
 <b>Example configuration:</b><br />
