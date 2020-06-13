@@ -7,7 +7,8 @@
 4. Checksum check.
 5. Extracting.
 7. Copy to the configured directory.
-8. Delete the files downloaded in steps 2 and 3 and the directory created in step 5.
+8. Deletes downloaded files. These files were created in steps 2 and 3. Deletes the created files. This directory was created in step 5.
+
 
 
 <b>Usage:</b>
