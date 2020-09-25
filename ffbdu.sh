@@ -32,12 +32,12 @@ printf "\nDownloading $checksumUrl\nto $checksumPath\n"
 curl -# "$checksumUrl" -o "$checksumPath"
 
 checksumValue=$(grep "${url2array[7]}/${url2array[8]}/${url2array[9]}" "$checksumPath")
-
 IFS=' ' read -r -a checksumValueArray <<< "$checksumValue"
+
 checksumArchive=$("sha${checksumversion}sum" $ffArchivePath)
 IFS=' ' read -r -a checksumArchiveArray <<< "$checksumArchive"
 
-if [ "${checksumArchiveArray[0]}" = "${checksumValueArray[0]}" ]; then
+if [ "${checksumValueArray[0]}" = "${checksumArchiveArray[0]}" ]; then
   printf "\nExtract ${url2array[9]}\n"
   pv=`command -v pv`
   if [[ -z "$pv" ]]; then
@@ -55,11 +55,10 @@ if [ "${checksumArchiveArray[0]}" = "${checksumValueArray[0]}" ]; then
   rm "$ffArchivePath"
 
   echo "Done."
-  read -n 1 -s -r -p $'Press any key to continue\n'
 else
   printf "\nChecksum error.\n"
-  printf "\nClean.\n"
+  printf "Clean.\n"
+  printf "${checksumArchiveArray[0]}\n${checksumValue}\n"
   rm "$checksumPath"
   rm "$ffArchivePath"
 fi
-
